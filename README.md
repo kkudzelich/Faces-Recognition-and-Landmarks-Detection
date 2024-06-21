@@ -1,4 +1,4 @@
-# Facial Recognition and Landmarks Detection
+# An Interactive Advertising Campaign in the Mall: Faces Recognition and Landmarks Detection
 
 ## Project description
 
@@ -17,6 +17,7 @@ Cameras in the mall identify regular customers and offer them personalized disco
 Interactive advertising stands track the reactions of visitors and adapt the content depending on their emotions and engagement.
 The system offers additional information or discounts when identifying interest in a particular product.
 The advertiser receives data on the effectiveness of the campaign to optimize strategies.
+<p align="center"> <img src="images/1.png" align="middle" alt="drawing" width="600px"> </p>
 
 ## Data overview
 
@@ -31,18 +32,21 @@ Each .npz file contains four columns:
 
 ## Justification of the approach
 
-+ __Face Recognition__:
++ __Faces Recognition__:
 
-I decided to use the Face Classification model __with keypoints as features__. The keypoints of the face are unique patterns that allow you to reliably identify each person and to efficiently extract unique facial characteristics that remain stable under various conditions, such as facial expressions or viewing angles.
+I decided to use the Face Classification model __`with keypoints as features`__. The keypoints of the face are unique patterns that allow you to reliably identify each person and to efficiently extract unique facial characteristics that remain stable under various conditions, such as facial expressions or viewing angles.
 <p align="center"> <img src="images/landmarks_numbered.jpg" align="middle" alt="drawing" width="350px"> </p>
 
-In addition, the usage of keypoints reduces the dimensionality of the data, which simplifies the process of training the model and increases its performance. Thus, I achieved 93% accuracy in Facial Recognition with both KNN and Feed Forward Neral Network.
-<p align="center"> <img src="images/93_accuracy.png" align="middle" alt="drawing" width="400px"> </p> 
+In addition, the usage of keypoints reduces the dimensionality of the data, which simplifies the process of training the model and increases its performance. Thus, I achieved `93% accuracy in Faces Recognition` with both KNN and FeedForward Neural Network.
+<p align="center"> <img src="images/93_accuracy.png" align="middle" alt="drawing" width="600px"> </p>
+
+<p align="center"> <img src="images/correctly_classified_people.png" align="middle" alt="drawing" width="600px"> </p>
 
 + __Facial Landmarks Detection__:
   
 This task was solved using Convolutional Neural Network. I tried both a custom one with the selection of different parameters and pretrained ones (ResNet18, EfficientNet, MobileNetV2) __with fune-tuning__ on my data. __MobileNetV2__ turned out to be the best in quality and the fastest.
 <p align="center"> <img src="images/landmarks_detection_mobilenet.png" align="middle" alt="drawing" width="600px"> </p>
+<p align="center"> <img src="images/landmarks_detection_2_mobilenet.png" align="middle" alt="drawing" width="600px"> </p>
 
 ## Project Structure
 
@@ -51,3 +55,4 @@ This task was solved using Convolutional Neural Network. I tried both a custom o
 + `Landmarks_Detection_Pretrained_models.ipynb` - pretrained models with fune-tuning for landmarks detection
 + `models` - all the models present in the project are here
 + `dfExpanded.csv` - contains all the frames with the corresponding videoIDs and encoded actual names
++ `Final_project_presentation.pdf` - presentation of project
